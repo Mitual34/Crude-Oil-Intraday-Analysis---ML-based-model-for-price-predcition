@@ -1,0 +1,7 @@
+# Normalise line endings: keep LF in the repo for text files.
+* text=auto eol=lf
+
+# Treat these as binary so Git never touches their line endings.
+*.png binary
+*.jpg binary
+*.pdf binary

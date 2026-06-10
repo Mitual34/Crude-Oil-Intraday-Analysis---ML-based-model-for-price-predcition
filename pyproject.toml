@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crude-oil-analysis"
+version = "0.1.0"
+description = "Intraday crude-oil price forecasting with XGBoost, technical indicators, news sentiment and backtesting."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Mitual" }]
+keywords = [
+    "crude-oil",
+    "trading",
+    "forecasting",
+    "xgboost",
+    "backtesting",
+    "technical-analysis",
+    "sentiment-analysis",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "feedparser>=6.0",
+    "numpy>=1.21",
+    "pandas>=1.5",
+    "scikit-learn>=1.0",
+    "yfinance>=0.2.40",
+    "textblob>=0.17",
+    "matplotlib>=3.5",
+    "pytz>=2022.1",
+    "xgboost>=1.6",
+    "fpdf2>=2.7",
+]
+
+[project.optional-dependencies]
+gcs = ["google-cloud-storage>=2.10"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+crude-oil-analysis = "crude_oil_analysis.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Mitual34/Crude-Oil-Intraday-Analysis---ML-based-model-for-price-predcition"
+Repository = "https://github.com/Mitual34/Crude-Oil-Intraday-Analysis---ML-based-model-for-price-predcition"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
